@@ -1,0 +1,1 @@
+def select(goal): return {'goal':goal}

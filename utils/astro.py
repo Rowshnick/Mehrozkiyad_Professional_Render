@@ -1,0 +1,1 @@
+def compute_chart(dt): return {'sun':'Aries'}

@@ -1,0 +1,1 @@
+def generate_text(name, goal, chart): return 'summary'
