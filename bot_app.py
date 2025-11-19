@@ -168,13 +168,17 @@ def run_bot():
 
     app.add_handler(conv)
 
-    # webhook vs polling
+
+# webhook vs polling
     external = (os.getenv('RENDER_EXTERNAL_URL') or os.getenv('EXTERNAL_URL') or "").rstrip('/')
     token = os.getenv('TG_BOT_TOKEN')
-    path = os.getenv('WEBHOOK_PATH') or (token.replace(':','_') if token else None)
+
+    # FIXED HERE: set custom webhook path
+    path = "mehrozkiyad_webhook"   # ← fixed webhook path
+
     os.makedirs('outputs/sigils', exist_ok=True)
 
-    if external and path:
+    if external:
         webhook_url = f"{external}/{path}"
         logger.info("Starting webhook mode. webhook_url=%s", webhook_url)
         try:
@@ -190,6 +194,3 @@ def run_bot():
     else:
         logger.info("Starting polling mode (no RENDER_EXTERNAL_URL found).")
         app.run_polling()
-
-if __name__ == '__main__':
-    run_bot()
