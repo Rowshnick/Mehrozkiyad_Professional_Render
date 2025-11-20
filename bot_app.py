@@ -176,7 +176,9 @@ def run_bot():
     # FIXED HERE: set custom webhook path
     path = "mehrozkiyad_webhook"   # ← fixed webhook path
 
+    os.makedirs('outputs', exist_ok=True)
     os.makedirs('outputs/sigils', exist_ok=True)
+
 
     if external:
         webhook_url = f"{external}/{path}"
