@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv("BOT_TOKEN")
+print("TOKEN:", TOKEN)
 
 # مراحل conversation
 LANG, DATE_YEAR, DATE_MONTH, DATE_DAY, SIGN, FORECAST = range(6)
